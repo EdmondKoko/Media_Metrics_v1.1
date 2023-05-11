@@ -10,10 +10,7 @@ SECRET_KEY = (
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',
-                 '62.84.127.194',
-                 'edmondkoko.servebeer.com',
-                 ]
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
