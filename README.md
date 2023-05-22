@@ -1,9 +1,7 @@
 ![example workflow](https://github.com/EdmondKoko/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Demo:
-62.84.127.194,
-edmondkoko.servebeer.com
-
+62.84.127.194
 
 # Итоговый проект 16 спринта Яндекс. Практикум по курсу "CI и CD проекта api_yamdb" 
  
