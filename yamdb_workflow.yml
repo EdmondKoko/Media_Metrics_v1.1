@@ -61,7 +61,6 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
-            sudo docker-compose down
             rm .env -f
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
