@@ -17,7 +17,7 @@ class ReviewAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
-class CommentAdmin(admin.ModelAdmin)
+class CommentAdmin(admin.ModelAdmin):
 """Для модели Comment создана кастомная админка."""
     list_display = (
         'review',
