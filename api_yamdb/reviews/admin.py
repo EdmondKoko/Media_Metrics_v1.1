@@ -4,6 +4,7 @@ from .models import Comment, Review, Genre, Category, Title
 
 
 class ReviewAdmin(admin.ModelAdmin):
+    """Для модели Review создана кастомная админка."""
     list_display = (
         'text',
         'score',
@@ -16,7 +17,8 @@ class ReviewAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
-class CommentAdmin(admin.ModelAdmin):
+class CommentAdmin(admin.ModelAdmin)
+"""Для модели Comment создана кастомная админка."""
     list_display = (
         'review',
         'author',
@@ -30,18 +32,21 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class GenreAdmin(admin.ModelAdmin):
+    """Для модели Genre создана кастомная админка."""
     list_display = ('id', 'name', 'slug')
     list_editable = ('name', 'slug')
     search_fields = ('name', 'slug')
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """Для модели Category создана кастомная админка."""
     list_display = ('id', 'name', 'slug')
     list_editable = ('name', 'slug')
     search_fields = ('name', 'slug')
 
 
 class TitleAdmin(admin.ModelAdmin):
+    """Для модели Title создана кастомная админка."""
     list_display = (
         'id',
         'name',
