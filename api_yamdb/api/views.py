@@ -25,7 +25,7 @@ from .token import send_code
 
 
 class CategoryViewSet(ListCreateDestroyViewSet):
-    """Вьюсет для модели Category"""
+    """Вьюсет для модели Category."""
     queryset = Category.objects.get_queryset().order_by('id')
     pagination_class = PageNumberPagination
     serializer_class = CategorySerializer
@@ -36,7 +36,7 @@ class CategoryViewSet(ListCreateDestroyViewSet):
 
 
 class GenreViewSet(ListCreateDestroyViewSet):
-    """Вьюсет для модели Genre"""
+    """Вьюсет для модели Genre."""
     queryset = Genre.objects.get_queryset().order_by('id')
     serializer_class = GenreSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -46,7 +46,7 @@ class GenreViewSet(ListCreateDestroyViewSet):
 
 
 class TitleViewSet(viewsets.ModelViewSet):
-    """Вьюсет для модели Title"""
+    """Вьюсет для модели Title."""
     queryset = Title.objects.annotate(rating=Avg(
         'reviews__score')).order_by('name')
     serializer_class = TitleSerializer
@@ -61,7 +61,7 @@ class TitleViewSet(viewsets.ModelViewSet):
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
-    """Вьюсет для модели Review"""
+    """Вьюсет для модели Review."""
     serializer_class = ReviewSerializer
     permission_classes = [AuthorAdminModeratorOrReadOnly]
     pagination_class = PageNumberPagination
@@ -77,7 +77,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    """Вьюсет для модели Comment"""
+    """Вьюсет для модели Comment."""
     serializer_class = CommentSerializer
     permission_classes = [AuthorAdminModeratorOrReadOnly]
 
@@ -92,7 +92,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 
 class UserGetTokenViewSet(ListCreateDestroyViewSet):
-    """Вьюсет для генерации и получения пользователем JWT токена"""
+    """Вьюсет для генерации и получения пользователем JWT токена."""
     queryset = User.objects.all()
     serializer_class = UserGetTokenSerializers
     permission_classes = (permissions.AllowAny,)
@@ -113,7 +113,7 @@ class UserGetTokenViewSet(ListCreateDestroyViewSet):
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """Вьюсет для модели User"""
+    """Вьюсет для модели User."""
     lookup_field = 'username'
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -128,7 +128,7 @@ class UserViewSet(viewsets.ModelViewSet):
         url_name='get_user'
     )
     def get_user_by_username(self, request, username):
-        """Обеспечивает получание данных пользователя по его username"""
+        """Обеспечивает получание данных пользователя по его username."""
         user = get_object_or_404(User, username=username)
         if request.method == 'PATCH':
             serializer = UserSerializer(user, data=request.data, partial=True)
