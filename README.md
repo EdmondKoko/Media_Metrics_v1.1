@@ -1,10 +1,9 @@
 ![example workflow](https://github.com/EdmondKoko/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
-
-Demo:
-62.84.127.194
-
-
-# Итоговый проект 16 спринта Яндекс. Практикум по курсу "CI и CD проекта api_yamdb" 
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python&logoColor=yellow)
+![Django](https://img.shields.io/badge/Django-2.2.6-red?style=for-the-badge&logo=django&logoColor=blue)
+![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![SQLite](https://img.shields.io/badge/SQLite-grey?style=for-the-badge&logo=postgresql&logoColor=yellow)
  
 ## Описание 
  
@@ -36,14 +35,7 @@ Demo:
 - Фильтрация по полям. 
  
 #### Документация к API доступна по адресу [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/) после запуска сервера с проектом 
- 
-#### Технологии 
- 
-- Python 3.7 
-- Django 2.2.16 
-- Django Rest Framework 3.12.4 
-- Simple JWT 
-- SQLite3 
+
  
 #### Запуск проекта в dev-режиме 
  
