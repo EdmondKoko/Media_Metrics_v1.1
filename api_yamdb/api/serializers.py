@@ -8,7 +8,6 @@ from users.models import User
 
 class CategorySerializer(serializers.ModelSerializer):
     """Сериализатор для модели Category"""
-
     class Meta:
         model = Category
         exclude = ('id',)
@@ -16,7 +15,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class GenreSerializer(serializers.ModelSerializer):
     """Сериализатор для модели Genre"""
-
     class Meta:
         model = Genre
         exclude = ('id',)
@@ -24,7 +22,6 @@ class GenreSerializer(serializers.ModelSerializer):
 
 class TitleSerializer(serializers.ModelSerializer):
     """Сериализатор для модели Title (для записи)"""
-
     genre = serializers.SlugRelatedField(
         queryset=Genre.objects.all(),
         slug_field='slug',
@@ -49,7 +46,6 @@ class TitleSerializer(serializers.ModelSerializer):
 
 class TitleReadSerializer(serializers.ModelSerializer):
     """Сериализатор для модели Title (для чтения)."""
-
     rating = serializers.IntegerField(read_only=True)
     genre = GenreSerializer(many=True)
     category = CategorySerializer()
@@ -69,7 +65,6 @@ class TitleReadSerializer(serializers.ModelSerializer):
 
 class UserCreateSerializers(serializers.Serializer):
     """Сериализатор для создания Usera"""
-
     username = serializers.CharField(
         required=True,
         max_length=150,
@@ -88,6 +83,7 @@ class UserCreateSerializers(serializers.Serializer):
 
 
 class UserGetTokenSerializers(serializers.Serializer):
+    """Сериализатор для получения токена пользователя."""
     username = serializers.CharField()
     confirmation_code = serializers.CharField()
 
@@ -102,6 +98,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ReviewSerializer(serializers.ModelSerializer):
+    """Сериализатор для модели Review."""
     author = serializers.SlugRelatedField(
         slug_field='username',
         read_only=True,
@@ -132,6 +129,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """Сериализатор для модели Comment."""
     author = serializers.SlugRelatedField(
         slug_field='username',
         read_only=True,
